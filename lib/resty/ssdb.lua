@@ -7,7 +7,6 @@ local sub = string.sub
 local tcp = ngx.socket.tcp
 local insert = table.insert
 local concat = table.concat
-local len = string.len
 local null = ngx.null
 local pairs = pairs
 local unpack = unpack
@@ -114,7 +113,7 @@ local function _read_reply(sock)
     while true do
         -- read block size
         local line, err, partial = sock:receive()
-        if not line or len(line)==0 then
+        if not line or #line==0 then
             -- packet end
             break
         end

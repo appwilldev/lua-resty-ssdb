@@ -145,7 +145,7 @@ local function _gen_req(args)
 
     local req = new_tab(nargs + 1, 0)
 
-    local nbits = 1
+    local nbits = 0
     for i = 1, nargs do
         local arg = args[i]
 

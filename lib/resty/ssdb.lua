@@ -242,8 +242,8 @@ function _M.multi_zset(self, keyname, ...)
 end
 
 
-function _M.init_pipeline(self)
-    self._reqs = {}
+function _M.init_pipeline(self, n)
+    self._reqs = new_tab(n or 4, 0)
 end
 
 
